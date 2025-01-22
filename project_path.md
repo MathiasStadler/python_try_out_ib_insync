@@ -48,3 +48,18 @@ pip3 list
 ```
 
 
+> [!NOTE]
+> I want the readers to read it carefully as it contains many important docs.
+
+
+https://stackoverflow.com/questions/17115664/can-linux-cat-command-be-used-for-writing-text-to-file
+
+## first tws connect
+
+```python
+from ib_insync import *
+util.startLoop()
+
+ib = IB()
+ib.connect('127.0.0.1', 7497, clientId=12)
+```
