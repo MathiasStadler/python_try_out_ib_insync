@@ -52,7 +52,7 @@ pip3 list
 > [Multi line to new files](https://stackoverflow.com/questions/17115664/can-linux-cat-command-be-used-for-writing-text-to-file/57051604#57051604)
 >
 >```bash
->cat \> outfile.txt <<<EOF
+>cat > outfile.txt <<EOF
 >some text
 >to save
 >EOF
