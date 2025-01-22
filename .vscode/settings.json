@@ -1,7 +1,18 @@
 {
     "cSpell.words": [
+        "configparser",
+        "ibapi",
+        "IBGW",
         "IBKR",
         "insync",
         "venv"
-    ]
+    ],
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:python_try_out_ib_insync}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    }
 }
