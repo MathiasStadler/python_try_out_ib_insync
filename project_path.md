@@ -94,7 +94,7 @@ EOF
 
 ## [better example](https://stackoverflow.com/questions/71040117/part-of-requested-market-data-is-not-subscribed-ib-insync)
 ```bash
-cat > workspace/retrieve_option_chain.py << EOF
+cat >workspace/retrieve_option_chain.py << EOF
 # FROM HERE
 # https://stackoverflow.com/questions/71040117/part-of-requested-market-data-is-not-subscribed-ib-insync
 import time
@@ -112,6 +112,8 @@ config = ConfigParser()
 def get_chain(ib,ticker, exp_list):
     exps = {}
     df = pd.DataFrame(columns=['strike', 'kind', 'close', 'last'])
+    pd.set_option('display.max_rows', None)  # `None` means displaying all rows
+    pd.set_option('display.max_columns', None)  # `None` means displaying all columns
     for i in exp_list:
         ib.sleep()
 
@@ -122,7 +124,7 @@ def get_chain(ib,ticker, exp_list):
                    for t in ib.reqTickers(*options[i:i + 100])]
 
         for x in tickers:
-            df = df.append(
+            df = df._append(
                 {'strike': x.contract.strike, 'kind': x.contract.right, 'close': x.close, 'last': x.last, 'bid': x.bid,
                  'ask': x.ask, 'mid': (x.bid + x.ask) / 2, 'volume': x.volume}, ignore_index=True)
             exps[i] = df
