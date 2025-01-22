@@ -49,10 +49,12 @@ pip3 list
 
 
 > [!NOTE]
-> I want the readers to read it carefully as it contains many important docs.
-
-
-https://stackoverflow.com/questions/17115664/can-linux-cat-command-be-used-for-writing-text-to-file
+> [Multi line to new files](https://stackoverflow.com/questions/17115664/can-linux-cat-command-be-used-for-writing-text-to-file)
+>
+> cat > outfile.txt <<EOF
+> >some text
+> >to save
+> >EOF
 
 ## first tws connect
 
