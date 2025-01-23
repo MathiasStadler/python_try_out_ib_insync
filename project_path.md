@@ -88,12 +88,12 @@ ib.qualifyContracts(nvda)
 [ticker] = ib.reqTickers(nvda)
 nvdaValue = ticker.marketPrice()
 
-# python3 workspace/retrieve_price_nvda.py
+
 EOF
 ```
 
 ## [better example](https://stackoverflow.com/questions/71040117/part-of-requested-market-data-is-not-subscribed-ib-insync)
-```bash
+```python
 cat >workspace/retrieve_option_chain.py << EOF
 # FROM HERE
 # https://stackoverflow.com/questions/71040117/part-of-requested-market-data-is-not-subscribed-ib-insync
@@ -107,7 +107,7 @@ from ibapi.common import TickerId, SetOfFloat, SetOfString, MarketDataTypeEnum
 config = ConfigParser()
 
 
-# TWs 7497, IBGW 4001
+## TWs 7497, IBGW 4001
 
 def get_chain(ib,ticker, exp_list):
     exps = {}
@@ -154,6 +154,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-# python3 workspace/retrieve_option_chain.py
+## python3 workspace/retrieve_option_chain.py
 EOF
 ```
